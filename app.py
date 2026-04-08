@@ -31,13 +31,13 @@ if "docs_loaded" not in st.session_state:
 
 def init_rag_engine():
     """初始化 RAG 引擎"""
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key or api_key == "your_anthropic_api_key_here":
-        st.error("⚠️ 请先配置 ANTHROPIC_API_KEY 环境变量")
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key :
+        st.error("⚠️ 请先配置 OPENAI_API_KEY 环境变量")
         return None
 
     return KnowledgeBaseRAG(
-        persist_directory="./chroma_db",
+        persist_directory="./faiss_index",
         chunk_size=500,
         chunk_overlap=50,
         api_key=api_key
