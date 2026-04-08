@@ -1,0 +1,32 @@
+# --- 核心大模型与协议 ---
+# 2026年主流版本，完美兼容通义千问 OpenAI 格式
+openai>=2.30.0
+# 专门用于 OpenAI/Qwen 接口的适配器
+langchain-openai>=1.1.0
+
+# --- LangChain 1.x 核心框架 ---
+# 基础框架
+langchain>=1.2.15
+langchain-core>=1.2.20
+# 社区组件（包含 FAISS 的集成封装）
+langchain-community>=0.3.10
+# 文本分割工具
+langchain-text-splitters>=1.1.0
+# 如果你需要更复杂的 Agent 逻辑
+langgraph>=1.1.0
+
+# --- 向量数据库 (放弃 Chroma，改用 FAISS) ---
+# CPU 版本安装最简单，兼容性最强
+faiss-cpu>=1.11.0
+
+# --- 文档解析工具 ---
+pypdf>=5.7.0
+python-docx>=1.2.0
+markdown>=3.10.0
+
+# --- UI 与 工具 ---
+streamlit>=1.56.0
+python-dotenv>=1.2.2
+pydantic>=2.11.0
+# 用于计算 Token 数量
+tiktoken>=0.12.0
