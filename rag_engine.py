@@ -41,10 +41,10 @@ class KnowledgeBaseRAG:
             chunk_size=chunk_size, chunk_overlap=chunk_overlap
         )
 
-        # ✅ 通义千问官方嵌入模型（已替换Fake）
+        # ✅ 通义千问官方嵌入模型
         self.embeddings = DashScopeEmbeddings(
             model="text-embedding-v1",
-            dashscope_api_key=os.getenv("DASHSCOPE_API_KEY")
+            dashscope_api_key=os.getenv("OPENAI_API_KEY")
         )
 
         # 向量库
